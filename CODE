@@ -1,0 +1,78 @@
+JavaScript
+
+const apiKey = "8d087730b4748edf0c9813337ab7a0f6";
+const city = "Chennai";
+
+fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById("temp").innerText =
+      `Current temperature in ${city}: ${data.main.temp} °C`;
+  });
+const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+const sales = [120, 150, 170, 200, 230, 300, 280];
+
+new Chart(document.getElementById("salesChart"), {
+  type: "bar",
+  data: {
+    labels: days,
+    datasets: [{
+      label: "Ice Cream Sales",
+      data: sales
+    }]
+  }
+});
+";
+const city = "Chennai";
+
+fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById("temp").innerText =
+      `Current temperature in ${city}: ${data.main.temp} °C`;
+  });
+
+const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+const sales = [120, 150, 170, 200, 230, 300, 280];
+
+new Chart(document.getElementById("salesChart"), {
+  type: "bar",
+  data: {
+    labels: days,
+    datasets: [{
+      label: "Ice Cream Sales",
+      data: sales
+    }]
+  }
+});
+
+CSS
+body {
+  font-family: Arial;
+  text-align: center;
+  margin: 40px;
+}
+
+h2 {
+  color: #333;
+}
+
+HTML
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather vs Ice Cream Sales</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<h2>Weather vs Ice Cream Sales Dashboard</h2>
+
+<p id="temp">Loading temperature...</p>
+
+<canvas id="salesChart"></canvas>
+
+<script src="script.js"></script>
+</body>
+</html>
